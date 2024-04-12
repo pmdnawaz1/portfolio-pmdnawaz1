@@ -13,9 +13,8 @@ const Hero = (props) => (
           My Portfolio
         </SectionTitle>
         <SectionText>
-        Hi! I'm Sarfaraz Nawaz. This is my portfolio. I'm a full stack developer specialized in MERN stack. I built this portfolio using React.js and Next.js. 
+        Hi! I'm Sarfaraz Nawaz. This is my portfolio. I'm a full stack developer specialized in MERN, MEAN stack. I'm currently working at Loyalytics AI as a product engineer. 
         </SectionText>
-      {/* {<Button onClick={props.handleClick}>My Certifications</Button>} */}
       </LeftSection>
     </Section>
   

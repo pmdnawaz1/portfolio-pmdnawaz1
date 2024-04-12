@@ -35,7 +35,7 @@ export const TitleContent = styled.div`
   text-align: center;
   z-index: 20;
   width: 100%;
-
+  padding: 10px;
 `;
 
 
@@ -68,6 +68,7 @@ export const Intro = styled.div`
 
 export const CardInfo = styled.p`
   width: 100%;
+  height: 250px;
   padding: 0 50px;
   color: #e4e6e7;
   font-style: 2rem;

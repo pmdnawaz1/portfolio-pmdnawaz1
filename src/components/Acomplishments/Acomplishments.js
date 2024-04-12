@@ -5,7 +5,7 @@ import { Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
 
 const data = [
   { number: 290, text: 'Instagram Followers'},
-  { number: 30, text: 'LinkedIn Followers', },
+  { number: 725, text: 'LinkedIn Followers', },
   { number: 460, text: 'Facebook Followers', },
   { number: 80, text: 'Twitter Followers', }
 ];

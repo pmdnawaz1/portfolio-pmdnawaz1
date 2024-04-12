@@ -1,6 +1,6 @@
 import React from 'react';
 import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
-import { FcDeployment } from "react-icons/fc";
+import { IoRocketOutline  } from "react-icons/io5";
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -45,6 +45,7 @@ const Technologies = () =>  (
             Google APIs <br />
             Firebase <br />
             MongoDB <br />
+            Websockets, Webhooks, Queue storages, Blob storages <br />
             MySQL <br />
             Java <br />
             PHP
@@ -53,7 +54,7 @@ const Technologies = () =>  (
       </ListItem>
       <ListItem>
         <picture>
-          <FcDeployment  size="3rem" />
+          <IoRocketOutline  size="2rem" />
         </picture>
         <ListContainer>
           <ListTitle>Deployment</ListTitle>
