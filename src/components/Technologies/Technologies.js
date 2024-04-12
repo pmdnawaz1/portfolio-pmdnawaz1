@@ -1,5 +1,6 @@
 import React from 'react';
 import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
+import { FcDeployment } from "react-icons/fc";
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -16,13 +17,18 @@ const Technologies = () =>  (
           <DiReact size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>Frontend</ListTitle>
           <ListParagraph>
             Experiece with <br />
             React.js <br />
+            Next.js <br />
+            Angular <br />
+            Nuxt <br />
             Html5, CSS3 <br />
             JQuery <br />
-            Wordpress
+            Wordpress <br />
+            Tailwind CSS <br />
+            Bootstrap <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -31,13 +37,33 @@ const Technologies = () =>  (
           <DiFirebase size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>Back-End</ListTitle>
+          <ListTitle>Backend</ListTitle>
           <ListParagraph>
             Experience with <br />
-            Node.js and Express.js <br />
-            MongoDB and Mongoose <br />
+            Node.js <br />
+            Azure Functions <br />
+            Google APIs <br />
+            Firebase <br />
+            MongoDB <br />
+            MySQL <br />
             Java <br />
             PHP
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <picture>
+          <FcDeployment  size="3rem" />
+        </picture>
+        <ListContainer>
+          <ListTitle>Deployment</ListTitle>
+          <ListParagraph>
+            Experience with <br />
+            AWS EC2 <br />
+            Hostinger VPS <br />
+            Azure app services <br />
+            cPanel <br />
+            Firebase, Render, Vercel and Heroku
           </ListParagraph>
         </ListContainer>
       </ListItem>

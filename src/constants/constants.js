@@ -13,7 +13,7 @@ export const projects = [
       image: '/images/6.png',
       tags: ['ReactJS', 'NodeJS', 'Express','Jwt'],
     visit: 'https://fms-mern.vercel.app/',
-    id: 0,
+    id: 8,
   },
   {
     title: 'WhatsApp to SpreadSheet and MongoDB',
@@ -21,7 +21,7 @@ export const projects = [
     image: '/images/3.jpg',
     tags: ['NodeJS', 'whatsapp-web.js','google-spreadsheet','mongoose'],
     visit: 'https://github.com/pmdnawaz1/WhatsApptoSheets',
-    id: 2,
+    id: 7,
   },
   {
     title: 'Full stack login and signup pages',
@@ -29,16 +29,16 @@ export const projects = [
     image: '/images/4.png',
     tags: ['React', 'NodeJS', 'Mongoose','Postman'],
     visit: 'https://github.com/pmdnawaz1',
-    id: 3,
+    id: 6,
   },
   {
-    title: 'Contributed in NASA API',
+    title: 'NASA API',
     description:"This is a android app of my friend which shows NASA's latest mars photos using NASA mars api. This project helped me to understand how API's work.",
     image: '/images/2.jpg',
     tags: ['DART', 'FIREBASE'],
     source: 'https://google.com',
     visit: 'https://google.com',
-    id: 1,
+    id: 7,
   },
   {
     title: 'Telegram bot',
@@ -46,8 +46,40 @@ export const projects = [
     image: '/images/5.png',
     tags: ['Heroku', 'Python', 'Replit'],
     visit: 'https://github.com/pmdnawaz1/UltroidOppeace',
+    id: 9,
+  },
+  {
+    title: 'Contributed in a startup Ez Age',
+    description: "I was one of the early developers in this startup. I got a chance to build, deploy and maintain the project. The tech stack we used is MERN. I was able to handle the team.",
+    image: '/images/7.png',
+    tags: ['MERN','Redux', 'SMS, Email and Whatsapp integrations', 'System design', 'User authentication and authorization'],
+    visit: 'https://ezAge.in',
+    id: 2,
+  },
+  {
+    title: 'Contributed in a project Memist',
+    description: "This is a facebook type application. I was recruited as a part-time developer. I did NodeJs backend development for creating posts, comments and likes etc., and integration with frontend. I also did enable state management using Redux ",
+    image: '/images/8.png',
+    tags: ['MERN', 'Redux', 'NodeJs', 'System design'],
+    visit: 'https://memist.vercel.app/',
     id: 4,
   },
+  {
+    title: 'Website for tourism',
+    description: "This is a portfolio website for epic moto tours company. I was given a design and I developed the whole code for the website from scratch. The tech stack we used is HTML, CSS, Javascript.",
+    image: '/images/9.png',
+    tags: ['HTML', 'Css', 'Javascript'],
+    visit: 'https://epic-moto.vercel.app/',
+    id: 1,
+  },
+  {
+    title: 'Portfolio website for a bussiness',
+    description: "This is a portfolio website for a bussiness. I was given a design and I developed the whole code for the website from scratch in Next.js 14. I have included animations for hovers, scrolling and smooth scrolling using AOS library. Ive used best practices for SEO using latest Next.js techniques. This protfolio also includes forms and admin panel",
+    image: '/images/11.png',
+    tags: ['Next.js', 'MongoDB', 'Admin panel', 'Forms'],
+    visit: 'https://qubic-gen-portfolio.vercel.app/',
+    id: 3,
+  }
 ];
 
 export const TimeLineData = [
@@ -56,4 +88,6 @@ export const TimeLineData = [
   { year: 2020, text: 'Started Android OS development.', },
   { year: 2021, text: 'Stepped into programming world', },
   { year: 2022, text: 'Started learning web development', },
+  { year: 2023, text: 'Started Freelancing and part-time works in web development', },
+  { year: 202, text: 'Joined Loyalytics AI as a full-time developer', },
 ];
