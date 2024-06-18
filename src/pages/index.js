@@ -13,8 +13,8 @@ const Home = () => {
       {/* <Section grid> */}
         <Hero />
       {/* </Section> */}
-      <Projects />
       <Technologies />
+      <Projects />
       <Timeline />
       <Acomplishments />
     </Layout>
