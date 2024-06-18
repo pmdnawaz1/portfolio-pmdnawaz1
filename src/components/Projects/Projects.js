@@ -33,6 +33,7 @@ const Projects = () => (
         );
       })}
     </GridContainer>
+    <SectionDivider colorAlt />
   </Section>
 );
 

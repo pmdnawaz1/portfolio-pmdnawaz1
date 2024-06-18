@@ -5,31 +5,10 @@ import Dicss from './DiCss.js'
 
 
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyles';
+import FloatingHeaderContent from './FloatingHeader.js';
 
 const Header = () =>  (
   <Container>
-    <Div1>
-      <Link href="/">
-        <Dicss/ >
-      </Link>
-    </Div1>
-    <Div2>
-      <li>
-        <Link href="#projects">
-          <NavLink>Projects</NavLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="#tech">
-          <NavLink>Technologies</NavLink>
-        </Link>
-      </li>        
-      <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
-      </li>        
-    </Div2>
       <Div3>
           <SocialIcons href="https://github.com/pmdnawaz1">
             <AiFillGithub size="3rem" />
@@ -41,6 +20,7 @@ const Header = () =>  (
             <AiFillInstagram size="3rem" />
           </SocialIcons>
       </Div3>
+      <FloatingHeaderContent />
     </Container>
 );
 
