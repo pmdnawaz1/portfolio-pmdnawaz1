@@ -16,9 +16,6 @@ const FloatingHeader = styled.div`
 	margin: 1rem;
 	border-radius: 10px;
 	opacity: 0.8;
-	@media ${(props) => props.theme.breakpoints.sm} {
-		display: none;
-	}
 `;
 
 const FloatingNav = styled.ul`
