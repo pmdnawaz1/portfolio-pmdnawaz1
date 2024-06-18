@@ -12,15 +12,15 @@ export const projects = [
     description: "I've created a portfolio website for AIKalpa. The design that was given is astonishing figma design. I have implemented gSAP, AOS, and Swiper for animations, Tailwid and core css for styling the website. Implemented SEO meta tags using Helmet. The tech stack used is REACT JS, REDUX, MONGODB,  NODE JS",
     image: '/images/13.png',
     tags: ['MERN', 'gSAP', 'SEO'],
-    visit: 'https://aikalpa.vercel.app/',
+    visit: 'https://a-i-kalpa-portfolio.vercel.app/',
     id: 2,
-  }
+  },
   {
     title: 'Parking slot booking system',
     description: "I've created a parking slot booking system. I've used best practices for image optimization. This also includes admin panel. The users will get OTP over email to confirm their booking. The tech stack used is NEXT JS, REDUX, MONGODB, JWT, NODE JS",
     image: '/images/12.png',
     tags: ['MERN', 'Redux', 'System design', 'NodeJs'],
-    visit: 'https://parking-booking-system.vercel.app/',
+    visit: 'https://parking-slot-booking.vercel.app/',
     id: 3,
   },
   {
