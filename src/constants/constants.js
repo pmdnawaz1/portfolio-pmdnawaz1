@@ -8,12 +8,28 @@ export const projects = [
     id: 1,
   },
   {
+    title: 'Portfolio Website for AIKalpa',
+    description: "I've created a portfolio website for AIKalpa. The design that was given is astonishing figma design. I have implemented gSAP, AOS, and Swiper for animations, Tailwid and core css for styling the website. Implemented SEO meta tags using Helmet. The tech stack used is REACT JS, REDUX, MONGODB,  NODE JS",
+    image: '/images/13.png',
+    tags: ['MERN', 'gSAP', 'SEO'],
+    visit: 'https://aikalpa.vercel.app/',
+    id: 2,
+  }
+  {
+    title: 'Parking slot booking system',
+    description: "I've created a parking slot booking system. I've used best practices for image optimization. This also includes admin panel. The users will get OTP over email to confirm their booking. The tech stack used is NEXT JS, REDUX, MONGODB, JWT, NODE JS",
+    image: '/images/12.png',
+    tags: ['MERN', 'Redux', 'System design', 'NodeJs'],
+    visit: 'https://parking-booking-system.vercel.app/',
+    id: 3,
+  },
+  {
     title: 'Contributed in a startup Ez Age',
     description: "I was one of the early developers in this startup. I got a chance to build, deploy and maintain the project. The tech stack we used is MERN. I was able to handle a tech team. I have implemented user authentications, redux and logics for various UI components. The major part of this product is payment integration, which I did using phonePe.",
     image: '/images/7.png',
     tags: ['MERN', 'Redux', 'System design', 'NodeJs'],
     visit: 'https://ezAge.in',
-    id: 2,
+    id: 4,
   },
   {
     title: 'Portfolio website for a bussiness',
@@ -21,7 +37,7 @@ export const projects = [
     image: '/images/11.png',
     tags: ['Next.js', 'MongoDB', 'Admin panel', 'Forms'],
     visit: 'https://qubic-gen-portfolio.vercel.app/',
-    id: 3,
+    id: 4,
   },
   {
     title: 'Contributed in a project Memist',
@@ -29,7 +45,7 @@ export const projects = [
     image: '/images/8.png',
     tags: ['MERN', 'Redux', 'NodeJs', 'System design'],
     visit: 'https://memist.vercel.app/',
-    id: 4,
+    id: 5,
   },
   {
     title: 'Wordpress Site',
@@ -45,7 +61,7 @@ export const projects = [
     image: '/images/4.png',
     tags: ['React', 'NodeJS', 'Mongoose','Postman'],
     visit: 'https://github.com/pmdnawaz1',
-    id: 5,
+    id: 6,
   },
   {
     title: 'WhatsApp Bot',
@@ -53,7 +69,7 @@ export const projects = [
     image: '/images/3.jpg',
     tags: ['NodeJS', 'whatsapp-web.js','google-spreadsheet','mongoose'],
     visit: 'https://github.com/pmdnawaz1/WhatsApptoSheets',
-    id: 6,
+    id: 7,
   },
   {
     title: 'NASA API',
@@ -62,7 +78,7 @@ export const projects = [
     tags: ['DART', 'FIREBASE'],
     source: 'https://google.com',
     visit: 'https://google.com',
-    id: 7,
+    id: 8,
   },
   {
     title: 'Telegram bot',
@@ -70,7 +86,7 @@ export const projects = [
     image: '/images/5.png',
     tags: ['Heroku', 'Python', 'Replit'],
     visit: 'https://github.com/pmdnawaz1/UltroidOppeace',
-    id: 9,
+    id: 10,
   },
   {
     title: 'Flight Management System',
@@ -78,7 +94,7 @@ export const projects = [
       image: '/images/6.png',
       tags: ['ReactJS', 'NodeJS', 'Express','Jwt'],
     visit: 'https://fms-mern.vercel.app/',
-    id: 8,
+    id: 9,
   },
  
 ];
