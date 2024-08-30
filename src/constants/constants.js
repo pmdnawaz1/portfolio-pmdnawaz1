@@ -8,6 +8,14 @@ export const projects = [
     id: 1,
   },
   {
+    title: 'Website for pharmacy/medical company',
+    description: "Website for a pharmacy/ laboratory products export. I've used React Vite and Tailwind for frontend and NodeJs for backend/ form management. This website includes variety of image coursels and image gallery. I've used best practices for image optimization. This website also includes forms and admin panel",
+    image: '/images/14.png',
+    tags: ['Tailwind', 'React', 'NodeJs'],
+    visit: 'https://epic-moto.vercel.app/',
+    id: 2,
+  },
+  {
     title: 'Portfolio Website for AIKalpa',
     description: "I've created a portfolio website for AIKalpa. The design that was given is astonishing figma design. I have implemented gSAP, AOS, and Swiper for animations, Tailwid and core css for styling the website. Implemented SEO meta tags using Helmet. The tech stack used is REACT JS, REDUX, MONGODB,  NODE JS",
     image: '/images/13.png',
