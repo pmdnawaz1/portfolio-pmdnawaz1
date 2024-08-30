@@ -12,7 +12,7 @@ export const projects = [
     description: "Website for a pharmacy/ laboratory products export. I've used React Vite and Tailwind for frontend and NodeJs for backend/ form management. This website includes variety of image coursels and image gallery. I've used best practices for image optimization. This website also includes forms and admin panel",
     image: '/images/14.png',
     tags: ['Tailwind', 'React', 'NodeJs'],
-    visit: 'https://epic-moto.vercel.app/',
+    visit: 'https://pharmacyatp.netlify.app/',
     id: 2,
   },
   {
