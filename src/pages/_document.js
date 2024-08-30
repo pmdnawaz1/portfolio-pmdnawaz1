@@ -64,6 +64,11 @@ export default class MyDocument extends Document {
             `,
           }}
         />
+         <script
+          defer
+          data-domain="pmdnawaz1.vercel.app"
+          src="https://plausible.io/js/script.js"
+        ></script>
         </Head>
         <body>
           <Main />
