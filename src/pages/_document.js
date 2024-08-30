@@ -49,6 +49,14 @@ export default class MyDocument extends Document {
             `,
           }}
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZJY98K1XE"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+
+          gtag('config', 'G-HZJY98K1XE');
+        </script>
         </Head>
         <body>
           <Main />
