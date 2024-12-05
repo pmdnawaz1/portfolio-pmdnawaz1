@@ -8,6 +8,14 @@ export const projects = [
     id: 1,
   },
   {
+    title: 'Location sharing with chat',
+    description: "Location sharing with chat using socket.io. I've used Mapbox GL to show the location of users. The tech stack we used is REACT JS, MAPBOX GL, SOCKET.IO, NODE JS. One should enter token to join the chat and also share location. This app uses GPS for realtime tracking of users.",
+    image: '/images/15.png',
+    tags: ['React', 'Mapbox', 'Socket.io', 'NodeJs'],
+    visit: 'https://live-location-orcin.vercel.app/',
+    id: 0,
+  },
+  {
     title: 'Website for pharmacy/medical company',
     description: "Website for a pharmacy/ laboratory products export. I've used React Vite and Tailwind for frontend and NodeJs for backend/ form management. This website includes variety of image coursels and image gallery. I've used best practices for image optimization. This website also includes forms and admin panel",
     image: '/images/14.png',
