@@ -64,6 +64,9 @@ const Technologies = () =>  (
             Hostinger VPS <br />
             Azure app services <br />
             cPanel <br />
+            Nginx <br />
+            Apache <br />
+            Docker <br />
             Firebase, Render, Vercel and Heroku
           </ListParagraph>
         </ListContainer>
@@ -77,6 +80,8 @@ const Technologies = () =>  (
           <ListParagraph>
             Java <br />
             JavaScript <br />
+            TypeScript <br />
+            Go <br />
             C <br />
             Fundamentals in Python <br />
             OOPS and DSA 
