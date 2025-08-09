@@ -74,44 +74,6 @@ export const projects = {
     },
     {
       id: 3,
-      title: 'Bio Pharma Portfolio',
-      description: 'Website for pharmacy/laboratory products export with image galleries and admin panel.',
-      image: '/images/12.png',
-      tags: ['React', 'Vite', 'Tailwind', 'Node.js', 'Pharmacy'],
-      visit: 'https://pharmacyatp.netlify.app/',
-      source: 'https://github.com/pmdnawaz1/pharma',
-      github: {
-        name: 'pharma',
-        visibility: 'PRIVATE',
-        stars: 0,
-        forks: 0,
-        language: 'JavaScript',
-        size: '157.9 MB',
-        created: '2024-08-01',
-        updated: '2024-09-01'
-      }
-    },
-    {
-      id: 4,
-      title: 'Leeuwenhoek Technologies',
-      description: 'Pharma company portfolio website with professional design and modern functionality.',
-      image: '/images/13.png',
-      tags: ['React', 'JavaScript', 'Corporate', 'Pharma'],
-      visit: 'https://www.leeuwenhoektech.com/',
-      source: 'https://github.com/pmdnawaz1/leeuwenhoek-technologies',
-      github: {
-        name: 'leeuwenhoek-technologies',
-        visibility: 'PRIVATE',
-        stars: 0,
-        forks: 0,
-        language: 'JavaScript',
-        size: '149 KB',
-        created: '2025-01-22',
-        updated: '2025-01-29'
-      }
-    },
-    {
-      id: 5,
       title: 'Epic Moto Tours',
       description: 'Tourism company website with image carousels and gallery. Built from scratch with best practices for image optimization. Features responsive design and modern UI.',
       image: '/images/14.png',
@@ -121,7 +83,7 @@ export const projects = {
       github: null
     },
     {
-      id: 6,
+      id: 4,
       title: 'Source Integreta',
       description: 'Corporate website with modern design and functionality.',
       image: '/images/15.png',
@@ -131,7 +93,7 @@ export const projects = {
       github: null
     },
     {
-      id: 7,
+      id: 5,
       title: 'JV Overseas',
       description: 'Educational consultancy website with comprehensive features. Includes admin panel for managing applications, newsletters, and job postings. Supports multiple languages and has a modern design.',
       image: '/images/2.jpg',
@@ -150,7 +112,7 @@ export const projects = {
       }
     },
     {
-      id: 8,
+      id: 6,
       title: 'Veda Loans and Finance',
       description: 'Financial services website with modern UI and functionality.',
       image: '/images/3.jpg',
@@ -158,6 +120,44 @@ export const projects = {
       visit: 'https://www.vedaloanshub.com/',
       source: null,
       github: null
+    },
+    {
+      id: 7,
+      title: 'Bio Pharma Portfolio',
+      description: 'Website for pharmacy/laboratory products export with image galleries and admin panel.',
+      image: '/images/12.png',
+      tags: ['React', 'Vite', 'Tailwind', 'Node.js', 'Pharmacy'],
+      visit: 'https://pharmacyatp.netlify.app/',
+      source: 'https://github.com/pmdnawaz1/pharma',
+      github: {
+        name: 'pharma',
+        visibility: 'PRIVATE',
+        stars: 0,
+        forks: 0,
+        language: 'JavaScript',
+        size: '157.9 MB',
+        created: '2024-08-01',
+        updated: '2024-09-01'
+      }
+    },
+    {
+      id: 8,
+      title: 'Leeuwenhoek Technologies',
+      description: 'Pharma company portfolio website with professional design and modern functionality.',
+      image: '/images/13.png',
+      tags: ['React', 'JavaScript', 'Corporate', 'Pharma'],
+      visit: 'https://www.leeuwenhoektech.com/',
+      source: 'https://github.com/pmdnawaz1/leeuwenhoek-technologies',
+      github: {
+        name: 'leeuwenhoek-technologies',
+        visibility: 'PRIVATE',
+        stars: 0,
+        forks: 0,
+        language: 'JavaScript',
+        size: '149 KB',
+        created: '2025-01-22',
+        updated: '2025-01-29'
+      }
     }
   ],
   

@@ -45,46 +45,8 @@ const Projects = () => {
   const categoryRef = useRef(null);
   const endOfProjectsRef = useRef(null);
 
-  // Sort projects by complexity and skills
-  const sortProjectsByComplexity = (projectList) => {
-    const complexityScore = (project) => {
-      let score = 0;
-      
-      // Language complexity scoring
-      if (project.github?.language === 'TypeScript') score += 10;
-      else if (project.github?.language === 'Go') score += 9;
-      else if (project.github?.language === 'Python') score += 8;
-      else if (project.github?.language === 'JavaScript') score += 7;
-      
-      // Size scoring (larger projects get more points)
-      const sizeNum = parseFloat(project.github?.size?.replace(/[^0-9.]/g, ''));
-      if (sizeNum > 50) score += 10;
-      else if (sizeNum > 10) score += 7;
-      else if (sizeNum > 1) score += 5;
-      else score += 3;
-      
-      // Tech stack complexity
-      if (project.tags.includes('AI')) score += 8;
-      if (project.tags.includes('WebRTC')) score += 8;
-      if (project.tags.includes('Docker')) score += 6;
-      if (project.tags.includes('Go')) score += 7;
-      if (project.tags.includes('TypeScript')) score += 6;
-      if (project.tags.includes('React Native')) score += 6;
-      if (project.tags.includes('System Design')) score += 7;
-      if (project.tags.includes('Microservices')) score += 7;
-      
-      // Recency bonus (newer projects get slight boost)
-      const year = new Date(project.github?.created).getFullYear();
-      if (year >= 2025) score += 3;
-      else if (year >= 2024) score += 2;
-      
-      return score;
-    };
-    
-    return [...projectList].sort((a, b) => complexityScore(b) - complexityScore(a));
-  };
 
-  const currentProjects = sortProjectsByComplexity(projects[activeCategory] || []);
+  const currentProjects = [...(projects[activeCategory] || [])].sort((a, b) => a.id - b.id);
   const displayedProjects = showAll ? currentProjects : currentProjects.slice(0, 6); // Show 6 projects initially
   const currentCategory = projectCategories.find(cat => cat.id === activeCategory);
 
