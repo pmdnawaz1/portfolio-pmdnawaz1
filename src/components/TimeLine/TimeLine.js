@@ -44,7 +44,7 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-      I see myself as a never give up guy. I'm great at problem solving, rational thinking and logical thinking.
+      I see myself as a never give up guy. I&apos;m great at problem solving, rational thinking and logical thinking.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
