@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { 
   ModernContainer, 
@@ -15,6 +15,7 @@ import {
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,21 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const updateHeaderOffset = () => {
+      if (typeof window === 'undefined') return;
+      const el = headerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const height = Math.ceil(rect.height);
+      document.documentElement.style.setProperty('--header-offset', `${height + 8}px`);
+    };
+
+    updateHeaderOffset();
+    window.addEventListener('resize', updateHeaderOffset);
+    return () => window.removeEventListener('resize', updateHeaderOffset);
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -33,7 +49,7 @@ const Header = () => {
   };
 
   return (
-    <ModernContainer isScrolled={isScrolled}>
+    <ModernContainer isScrolled={isScrolled} ref={headerRef}>
       <Logo onClick={() => scrollToSection('home')}></Logo>
       
       <Navigation>

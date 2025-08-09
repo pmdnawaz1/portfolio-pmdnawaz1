@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   ProjectsContainer,
   List,
@@ -18,15 +18,32 @@ import {
   CategoryButton,
   CategoryDescription,
   ProjectCounter,
-  ShowMoreButton
+  ShowMoreButton,
+  CategorySpacer
 } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle, SectionText } from '../../styles/GlobalComponents';
 import { projects, projectCategories } from '../../constants/constants';
+
+// helper to generate file-safe slugs from titles
+const slugify = (text) => {
+  return String(text)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+};
+
+const getProjectImagePath = (title) => `/images/${slugify(title)}.png`;
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('portfolios');
   const [showAll, setShowAll] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [categoryFixed, setCategoryFixed] = useState(false);
+  const [categoryHeight, setCategoryHeight] = useState(0);
+
+  const firstListItemRef = useRef(null);
+  const categoryRef = useRef(null);
+  const endOfProjectsRef = useRef(null);
 
   // Sort projects by complexity and skills
   const sortProjectsByComplexity = (projectList) => {
@@ -76,6 +93,54 @@ const Projects = () => {
     setShowAll(false);
   };
 
+  useEffect(() => {
+    const getHeaderOffset = () => {
+      if (typeof window === 'undefined') return 80;
+      const raw = getComputedStyle(document.documentElement).getPropertyValue('--header-offset');
+      const parsed = parseInt(raw, 10);
+      return Number.isFinite(parsed) ? parsed : 80;
+    };
+
+    const measureCategory = () => {
+      const el = categoryRef.current;
+      if (!el) return;
+      const height = Math.ceil(el.getBoundingClientRect().height);
+      if (height !== categoryHeight) setCategoryHeight(height);
+    };
+
+    const onScroll = () => {
+      const firstItemEl = firstListItemRef.current;
+      const endOfProjectsEl = endOfProjectsRef.current;
+      const categoryEl = categoryRef.current;
+
+      if (!firstItemEl) return;
+
+      const headerOffset = getHeaderOffset();
+      const firstItemRect = firstItemEl.getBoundingClientRect();
+      
+      let reached = firstItemRect.top <= headerOffset + 8; // small gap
+
+      if (reached && endOfProjectsEl && categoryEl) {
+          const endOfProjectsRect = endOfProjectsEl.getBoundingClientRect();
+          const categoryHeight = categoryEl.getBoundingClientRect().height;
+          if (endOfProjectsRect.top <= headerOffset + categoryHeight) {
+              reached = false;
+          }
+      }
+
+      setCategoryFixed(reached);
+      measureCategory();
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [activeCategory, displayedProjects.length, categoryHeight]);
+
   return (
     <Section id="projects">
       <SectionDivider />
@@ -84,7 +149,7 @@ const Projects = () => {
         A curated showcase of my most impactful work - prioritized by technical complexity, innovation, and real-world application.
       </SectionText>
       
-      <CategoryContainer>
+      <CategoryContainer fixed={categoryFixed} ref={categoryRef}>
         {projectCategories.map((category) => (
           <CategoryButton
             key={category.id}
@@ -97,18 +162,25 @@ const Projects = () => {
         ))}
       </CategoryContainer>
 
+      {categoryFixed && (
+        <CategorySpacer height={categoryHeight} />
+      )}
+
       {currentCategory && (
         <CategoryDescription>{currentCategory.description}</CategoryDescription>
       )}
 
       <ProjectsContainer>
         <List>
-          {displayedProjects.map((project, index) => (
-            <ListItem key={project.id}>
+          {displayedProjects.map((project, idx) => (
+            <ListItem 
+              key={project.id}
+              ref={idx === 0 ? firstListItemRef : null}
+            >
               <VisibilityBadge visibility={project.github?.visibility || 'PUBLIC'}>
                 {project.github?.visibility || 'PUBLIC'}
               </VisibilityBadge>
-              <ProjectImage src={project.image} alt={project.title} />
+              <ProjectImage src={getProjectImagePath(project.title)} alt={project.title} />
               <ListContainer>
                 <ListTitle>{project.title}</ListTitle>
                 <ListParagraph>{project.description}</ListParagraph>
@@ -169,14 +241,14 @@ const Projects = () => {
           ))}
         </List>
       </ProjectsContainer>
+      <div style={{margin:'2rem 0'}} ref={endOfProjectsRef}></div>
 
       {currentProjects.length > 6 && (
         <ShowMoreButton onClick={() => setShowAll(!showAll)}>
           {showAll ? 'Show Less Projects' : `View remaining ${currentProjects.length - 6} project(s)`}
         </ShowMoreButton>
       )}
-
-      <SectionDivider colorAlt />
+      <SectionDivider colorAlt/>
     </Section>
   );
 };

@@ -27,7 +27,7 @@ export const Logo = styled.h1`
   color: white;
   margin: 0;
   cursor: pointer;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg,rgb(234, 133, 102), #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -59,7 +59,7 @@ export const NavItem = styled.div`
 export const NavLink = styled.button`
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
@@ -96,7 +96,7 @@ export const NavLink = styled.button`
     padding: 1rem;
     border-radius: 0;
     background: none;
-    font-size: 1rem;
+    font-size: 2rem;
     
     &:hover {
       background: rgba(255, 255, 255, 0.05);

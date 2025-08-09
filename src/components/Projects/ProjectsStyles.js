@@ -98,6 +98,11 @@ export const ListContainer = styled.div`
   flex: 1;
   height: 100%;
 
+  /* Make sticky only when flagged */
+  position: ${props => (props.sticky ? 'sticky' : 'static')};
+  top: var(--header-offset, 80px);
+  z-index: 1;
+
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
     margin-left: 18px;
@@ -218,79 +223,6 @@ export const HiddenTags = styled.div`
   opacity: ${props => props.show ? '1' : '0'};
   visibility: ${props => props.show ? 'visible' : 'hidden'};
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  z-index: 15;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  min-width: 200px;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 20px;
-    width: 12px;
-    height: 12px;
-    background: rgba(26, 26, 26, 0.95);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    transform: rotate(45deg);
-  }
-`;
-
-export const ProjectActions = styled.div`
-  display: flex;
-  gap: 0.8rem;
-  justify-content: flex-start;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-`;
-
-export const ActionButton = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  
-  ${props => props.primary ? `
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-    }
-  ` : `
-    background: rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
-    border-color: rgba(255, 255, 255, 0.2);
-    
-    &:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-  `}
-  
-  svg {
-    width: 16px;
-    height: 16px;
-    stroke: currentColor;
-  }
-
-  @media ${props => props.theme.breakpoints.sm} {
-    padding: 0.6rem 1.2rem;
-    font-size: 12px;
-    
-    svg {
-      width: 14px;
-      height: 14px;
-    }
-  }
 `;
 
 export const CategoryContainer = styled.div`
@@ -298,18 +230,26 @@ export const CategoryContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 3rem 0;
-  padding: 0 2rem;
+  margin: ${props => (props.fixed ? '0' : '3rem 0')};
+  padding: ${props => (props.fixed ? '0.6rem 2rem' : '0 2rem')};
+  position: ${props => (props.fixed ? 'fixed' : 'static')};
+  top: ${props => (props.fixed ? 'var(--header-offset, 80px)' : 'auto')};
+  left: 0;
+  right: 0;
+  z-index: ${props => (props.fixed ? 100 : 'auto')};
+  background: 'transparent')};
+  border-bottom: ${props => (props.fixed ? '1px solid rgba(255, 255, 255, 0.08)' : 'none')};
   
   @media ${props => props.theme.breakpoints.md} {
     gap: 0.8rem;
-    margin: 2rem 0;
+    margin: ${props => (props.fixed ? '0' : '2rem 0')};
+    padding: ${props => (props.fixed ? '0.6rem 1.5rem' : '0 1.5rem')};
   }
   
   @media ${props => props.theme.breakpoints.sm} {
     gap: 0.5rem;
-    margin: 2rem 0;
-    padding: 0 1rem;
+    margin: ${props => (props.fixed ? '0' : '2rem 0')};
+    padding: ${props => (props.fixed ? '0.6rem 1rem' : '0 1rem')};
   }
 `;
 
@@ -366,63 +306,81 @@ export const CategoryButton = styled.button`
   }
 `;
 
-export const ProjectCounter = styled.span`
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.2rem 0.6rem;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: bold;
-
+export const CategoryDescription = styled.p`
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.6;
+  
+  @media ${props => props.theme.breakpoints.md} {
+    font-size: 15px;
+  }
+  
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 12px;
-    padding: 0.1rem 0.5rem;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
   }
 `;
 
-export const CategoryDescription = styled.p`
-  text-align: center;
-  color: #e4e6e7;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
-  padding: 0 2rem;
-  line-height: 1.6;
-  opacity: 0.8;
-  
-  @media ${props => props.theme.breakpoints.md} {
-    font-size: 1.1rem;
-    margin: 0 auto 2rem auto;
+export const ProjectActions = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+`;
+
+export const ActionButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  background: ${props => props.primary ? 'rgba(102, 126, 234, 0.15)' : 'rgba(255, 255, 255, 0.08)'};
+  color: #fff;
+  border: 1px solid ${props => props.primary ? 'rgba(102, 126, 234, 0.4)' : 'rgba(255, 255, 255, 0.15)'};
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: ${props => props.primary ? 'rgba(102, 126, 234, 0.25)' : 'rgba(255, 255, 255, 0.15)'};
+    border-color: ${props => props.primary ? 'rgba(102, 126, 234, 0.5)' : 'rgba(255, 255, 255, 0.2)'};
   }
-  
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: 1rem;
-    padding: 0 1rem;
-    margin: 0 auto 2rem auto;
+
+  svg {
+    width: 18px;
+    height: 18px;
   }
+`;
+
+export const ProjectCounter = styled.span`
+  margin-left: 0.5rem;
+  font-size: 0.9em;
+  opacity: 0.85;
 `;
 
 export const ShowMoreButton = styled.button`
   display: block;
-  margin: 3rem auto 0 auto;
+  margin: 2rem auto 0;
   padding: 0.8rem 1.6rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  font-weight: 500;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-  }
+  transition: all 0.2s ease;
 
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: 14px;
-    padding: 0.7rem 1.4rem;
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
   }
+`;
+
+export const CategorySpacer = styled.div`
+  height: ${props => props.height || 0}px;
 `;
 
 export const VisibilityBadge = styled.span`
@@ -456,27 +414,3 @@ export const VisibilityBadge = styled.span`
     right: 0.6rem;
   }
 `;
-
-// Project type icons mapping
-export const getProjectIcon = (tags, category) => {
-  if (tags.includes('AI') || tags.includes('Gemini AI')) return '🤖';
-  if (tags.includes('WebRTC') || tags.includes('Video')) return '📹';
-  if (tags.includes('Mobile') || tags.includes('React Native')) return '📱';
-  if (tags.includes('Docker') || tags.includes('Go')) return '🐳';
-  if (tags.includes('Admin Panel') || tags.includes('Management')) return '⚙️';
-  if (tags.includes('E-commerce') || tags.includes('Payment')) return '🛒';
-  if (tags.includes('Healthcare') || tags.includes('Medical')) return '🏥';
-  if (tags.includes('Education') || tags.includes('LMS')) return '🎓';
-  if (tags.includes('Finance') || tags.includes('Tax')) return '💰';
-  if (tags.includes('Islamic') || tags.includes('Masjid')) return '🕌';
-  if (tags.includes('Bot') || tags.includes('Automation')) return '🤖';
-  if (tags.includes('Analytics') || tags.includes('Dashboard')) return '📊';
-  if (tags.includes('Real-time') || tags.includes('WebSockets')) return '⚡';
-  if (tags.includes('Web Scraping') || tags.includes('Scraper')) return '🕷️';
-  if (category === 'portfolios') return '💼';
-  if (category === 'backends') return '⚙️';
-  if (category === 'client') return '🏢';
-  if (category === 'contributions') return '🤝';
-  if (category === 'upcoming') return '🚀';
-  return '💻';
-};
