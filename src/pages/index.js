@@ -14,8 +14,8 @@ const Home = () => {
       <section id="home">
         <Hero />
       </section>
-      <Technologies />
       <Projects />
+      <Technologies />
       <Timeline />
       <Acomplishments />
       <ChatToggle />

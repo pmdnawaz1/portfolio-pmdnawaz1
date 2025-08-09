@@ -50,7 +50,7 @@ const Header = () => {
 
   return (
     <ModernContainer isScrolled={isScrolled} ref={headerRef}>
-      <Logo onClick={() => scrollToSection('home')}></Logo>
+      <Logo onClick={() => scrollToSection('home')}>pmdnawaz1</Logo>
       
       <Navigation>
         <NavItem>

@@ -144,9 +144,9 @@ const Projects = () => {
   return (
     <Section id="projects">
       <SectionDivider />
-      <SectionTitle main>Featured Projects</SectionTitle>
+      <SectionTitle main>Projects</SectionTitle>
       <SectionText>
-        A curated showcase of my most impactful work - prioritized by technical complexity, innovation, and real-world application.
+        A curated showcase of my most impactful work.
       </SectionText>
       
       <CategoryContainer fixed={categoryFixed} ref={categoryRef}>
@@ -241,13 +241,14 @@ const Projects = () => {
           ))}
         </List>
       </ProjectsContainer>
-      <div style={{margin:'2rem 0'}} ref={endOfProjectsRef}></div>
 
       {currentProjects.length > 6 && (
         <ShowMoreButton onClick={() => setShowAll(!showAll)}>
           {showAll ? 'Show Less Projects' : `View remaining ${currentProjects.length - 6} project(s)`}
         </ShowMoreButton>
       )}
+      <div style={{margin:'1rem 0'}} ref={endOfProjectsRef}></div>
+
       <SectionDivider colorAlt/>
     </Section>
   );

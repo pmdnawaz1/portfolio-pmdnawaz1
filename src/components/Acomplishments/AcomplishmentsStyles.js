@@ -1,4 +1,13 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+const shineAnimation = keyframes`
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+`;
 
 export const Boxes = styled.div`
   width: 100%;
@@ -23,10 +32,20 @@ export const Boxes = styled.div`
 `
 
 export const Box = styled.div`
-  background: #212D45;
+  background: rgba(33, 45, 69, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   height: 144px;
   padding: 24px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(33, 45, 69, 0.9);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
   @media ${props => props.theme.breakpoints.lg} {
     height: 210px;
 
@@ -54,6 +73,13 @@ export const BoxNum = styled.h5`
   letter-spacing: 0.01em;
   color: #FFFFFF;
   margin-bottom: 8px;
+
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${shineAnimation} 4s linear infinite;
+  background-size: 200% auto;
 
   @media ${props => props.theme.breakpoints.md} {
     font-size: 28px;
