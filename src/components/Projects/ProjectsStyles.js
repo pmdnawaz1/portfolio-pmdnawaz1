@@ -229,7 +229,7 @@ export const CategoryContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: ${props => (props.fixed ? '0' : '3rem 0')};
   padding: ${props => (props.fixed ? '0.6rem 2rem' : '0 2rem')};
   position: ${props => (props.fixed ? 'fixed' : 'static')};
@@ -237,7 +237,8 @@ export const CategoryContainer = styled.div`
   left: 0;
   right: 0;
   z-index: ${props => (props.fixed ? 100 : 'auto')};
-  background: 'transparent')};
+  background: ${props => (props.fixed ? 'transparent' : 'transparent')};
+  backdrop-filter: ${props => (props.fixed ? 'blur(12px)' : 'none')};
   border-bottom: ${props => (props.fixed ? '1px solid rgba(255, 255, 255, 0.08)' : 'none')};
   
   @media ${props => props.theme.breakpoints.md} {
@@ -247,9 +248,9 @@ export const CategoryContainer = styled.div`
   }
   
   @media ${props => props.theme.breakpoints.sm} {
-    gap: 0.5rem;
-    margin: ${props => (props.fixed ? '0' : '2rem 0')};
-    padding: ${props => (props.fixed ? '0.6rem 1rem' : '0 1rem')};
+    gap: 1rem;
+    margin: ${props => (props.fixed ? '0' : '1.5rem 0')};
+    padding: ${props => (props.fixed ? '0.2rem 1rem' : '0 1rem')};
   }
 `;
 
@@ -301,8 +302,8 @@ export const CategoryButton = styled.button`
   }
   
   @media ${props => props.theme.breakpoints.sm} {
-    padding: 0.6rem 1.2rem;
-    font-size: 14px;
+    padding: 0.4rem 1rem;
+    font-size: 12px;
   }
 `;
 
@@ -323,7 +324,7 @@ export const CategoryDescription = styled.p`
   
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 14px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
