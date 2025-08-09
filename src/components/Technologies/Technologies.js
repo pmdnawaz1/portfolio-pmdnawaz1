@@ -19,16 +19,16 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>Frontend</ListTitle>
           <ListParagraph>
-            Experiece with <br />
-            React.js <br />
-            Next.js <br />
-            Angular <br />
-            Nuxt <br />
-            Html5, CSS3 <br />
-            JQuery <br />
-            Wordpress <br />
+            Experience with <br />
+            React.js, Next.js 15 <br />
+            TypeScript <br />
             Tailwind CSS <br />
+            Styled Components <br />
+            HTML5, CSS3 <br />
+            Vite, Webpack <br />
+            Shadcn UI <br />
             Bootstrap <br />
+            Responsive Design <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -40,15 +40,15 @@ const Technologies = () =>  (
           <ListTitle>Backend</ListTitle>
           <ListParagraph>
             Experience with <br />
-            Node.js <br />
-            Azure Functions <br />
-            Google APIs <br />
-            Firebase <br />
-            MongoDB <br />
-            Websockets, Webhooks, Queue storages, Blob storages <br />
-            MySQL <br />
-            Java <br />
-            PHP
+            Node.js, Express.js <br />
+            Go, Python <br />
+            MongoDB, PostgreSQL <br />
+            Firebase, Supabase <br />
+            WebSockets, tRPC <br />
+            Redis, JWT <br />
+            Google APIs, Gemini AI <br />
+            Minio, AWS S3 <br />
+            RESTful APIs <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -60,14 +60,14 @@ const Technologies = () =>  (
           <ListTitle>Deployment</ListTitle>
           <ListParagraph>
             Experience with <br />
-            AWS EC2 <br />
-            Hostinger VPS <br />
-            Azure app services <br />
-            cPanel <br />
-            Nginx <br />
-            Apache <br />
-            Docker <br />
-            Firebase, Render, Vercel and Heroku
+            Vercel, Netlify <br />
+            VPS (Custom Deployment) <br />
+            Docker, STUN <br />
+            Firebase, Render <br />
+            Nginx, Apache <br />
+            CI/CD Pipelines <br />
+            AWS EC2, S3 <br />
+            Domain & SSL Management <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -78,13 +78,14 @@ const Technologies = () =>  (
         <ListContainer>
           <ListTitle>Programming Languages</ListTitle>
           <ListParagraph>
-            Java <br />
-            JavaScript <br />
+            JavaScript ES6+ <br />
             TypeScript <br />
-            Go <br />
-            C <br />
-            Fundamentals in Python <br />
-            OOPS and DSA 
+            Go (Golang) <br />
+            Python <br />
+            Java <br />
+            System Design <br />
+            Data Structures & Algorithms <br />
+            Object-Oriented Programming <br />
           </ListParagraph>
         </ListContainer>
       </ListItem>

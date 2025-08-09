@@ -4,19 +4,21 @@ import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
+import ChatToggle from '../components/ChatToggle/ChatToggle';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
 const Home = () => {
   return (
     <Layout>
-      {/* <Section grid> */}
+      <section id="home">
         <Hero />
-      {/* </Section> */}
+      </section>
       <Technologies />
       <Projects />
       <Timeline />
       <Acomplishments />
+      <ChatToggle />
     </Layout>
   );
 };

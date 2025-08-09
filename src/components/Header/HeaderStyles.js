@@ -1,124 +1,190 @@
-import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 2rem;
-  padding: 1rem;
-  padding-top: 2rem;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
-  }
-`;
-export const Div1 = styled.div`
-  grid-area: 1 / 1 / 2 / 2;
+export const ModernContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 3;
-  }
-`;
-export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
-  display: flex;
-  justify-content: space-around;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
-  }
-`;
-export const Div3 = styled.div`
-  grid-area: 1 / 5 / 2 / 6;
-  display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
+  padding: 1rem 2rem;
+  background: ${props => props.isScrolled ? 
+    'rgba(26, 26, 26, 0.95)' : 'rgba(26, 26, 26, 0.8)'};
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
   }
 `;
 
-// Navigation Links
-export const NavLink = styled.a`
-  font-size: 2rem;
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  transition: 0.4s ease;
-  &:hover {
-    color: #fff;
-    opacity: 1;
-    cursor: pointer;
-  }
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.5rem;
-  }
-`;
-
-/// DropDown Contact
-export const ContactDropDown = styled.button`
-  border: none;
-  display: flex;
-  position: relative;
-  background: none;
-  font-size: 1.7rem;
-
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+export const Logo = styled.h1`
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
   cursor: pointer;
-  transition: 0.3s ease;
-
-  &:focus {
-    outline: none;
-  }
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  
   &:hover {
-    color: #fff;
+    transform: scale(1.05);
   }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.4rem 0;
-  }
-  @media ${(props) => props.theme.breakpoints.md} {
-    padding: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `;
 
-export const NavProductsIcon = styled(IoIosArrowDropdown)`
-  margin-left: 8px;
+export const Navigation = styled.nav`
   display: flex;
-  align-self: center;
-  transition: 0.3s ease;
-  opacity: ${({ isOpen }) => (isOpen ? '1' : '.75')};
-  transform: ${({ isOpen }) => (isOpen ? 'scaleY(-1)' : 'scaleY(1)')};
-
-  &:hover {
-    opacity: 1;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 2px 0 0 2px;
-    width: 15px;
+  align-items: center;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
+export const NavItem = styled.div`
+  position: relative;
+`;
 
-// Social Icons 
+export const NavLink = styled.button`
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 0;
+    background: none;
+    font-size: 1rem;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: none;
+    }
+  }
+`;
 
 export const SocialIcons = styled.a`
-transition: 0.3s ease;
-color: white;
-border-radius: 50px;
-  padding: 8px;
-&:hover {
-    background-color: #212d45;
-    transform: scale(1.2);
-    cursor: pointer;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px) scale(1.1);
   }
-`
+  
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+  }
+`;
+
+export const MobileMenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #667eea;
+  }
+  
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+export const MobileMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 26, 26, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transform: ${props => props.isOpen ? 'translateY(0)' : 'translateY(-100%)'};
+  opacity: ${props => props.isOpen ? '1' : '0'};
+  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+// Legacy components for backward compatibility
+export const Container = styled.div`
+  display: none;
+`;
+
+export const Div1 = styled.div`
+  display: none;  
+`;
+
+export const Div2 = styled.div`
+  display: none;
+`;
+
+export const Div3 = styled.div`
+  display: none;
+`;
+
+export const ContactDropDown = styled.button`
+  display: none;
+`;
+
+export const NavProductsIcon = styled.div`
+  display: none;
+`;
