@@ -32,6 +32,25 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: ${props => props.theme.colors.background1};
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #13ADC7;
+    border-radius: 5px;
+    border: 2px solid ${props => props.theme.colors.background1};
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #945DD6;
+  }
 `;
 
 export default GlobalStyles;

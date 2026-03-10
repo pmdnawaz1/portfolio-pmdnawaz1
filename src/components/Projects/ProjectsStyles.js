@@ -230,7 +230,7 @@ export const CategoryContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin: ${props => (props.fixed ? '0' : '3rem 0')};
+  margin: ${props => (props.fixed ? '0' : '0 0 2rem')};
   padding: ${props => (props.fixed ? '0.6rem 2rem' : '0 2rem')};
   position: ${props => (props.fixed ? 'fixed' : 'static')};
   top: ${props => (props.fixed ? 'var(--header-offset, 80px)' : 'auto')};
@@ -255,8 +255,8 @@ export const CategoryContainer = styled.div`
 `;
 
 export const CategoryButton = styled.button`
-  background: ${props => props.active ? 
-    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 
+  background: ${props => props.active ?
+    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' :
     'rgba(255, 255, 255, 0.1)'};
   color: ${props => props.active ? '#fff' : '#e4e6e7'};
   border: 2px solid ${props => props.active ? '#667eea' : 'rgba(255, 255, 255, 0.2)'};
@@ -274,9 +274,9 @@ export const CategoryButton = styled.button`
   overflow: hidden;
   
   &:hover {
-    background: ${props => props.active ? 
-      'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 
-      'rgba(255, 255, 255, 0.2)'};
+    background: ${props => props.active ?
+    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' :
+    'rgba(255, 255, 255, 0.2)'};
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
@@ -393,13 +393,13 @@ export const VisibilityBadge = styled.span`
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  background: ${props => props.visibility === 'PRIVATE' ? 
-    'rgba(255, 107, 107, 0.9)' : 
+  background: ${props => props.visibility === 'PRIVATE' ?
+    'rgba(255, 107, 107, 0.9)' :
     'rgba(78, 205, 196, 0.9)'};
   color: white;
   backdrop-filter: blur(10px);
-  border: 1px solid ${props => props.visibility === 'PRIVATE' ? 
-    'rgba(255, 107, 107, 0.3)' : 
+  border: 1px solid ${props => props.visibility === 'PRIVATE' ?
+    'rgba(255, 107, 107, 0.3)' :
     'rgba(78, 205, 196, 0.3)'};
   z-index: 5;
   
