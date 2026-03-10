@@ -514,7 +514,7 @@ export default function Post({ postData }) {
   useEffect(() => {
     if (activeId && sidebarRef.current && !isScrollingRef.current) {
       const activeLink = sidebarRef.current.querySelector(`a.active`);
-      if (activeLink) {
+      if (activeLink && typeof activeLink.scrollIntoView === 'function') {
         // Check if element is already largely visible to avoid jitter
         const linkRect = activeLink.getBoundingClientRect();
         const sidebarRect = sidebarRef.current.getBoundingClientRect();
